@@ -4,25 +4,26 @@
 
 //forward declarations
 //int can_print_it(char ch);
-void print_letters(char arg[]);
+void print_letters(char arg[], int str_len);
 
+/*
 void print_arguments(int argc, char *argv[])
 {
 	int i;
 	//passsing the arguments in argv array to print_letters 
 	for(i= 1 ; i < argc; i++){
-		print_letters(argv[i]);
+		print_letters(argv[i], strlen(argv[i]));
 	}
-
 }
+*/
 
-
-void print_letters(char arg[])
+void print_letters(char arg[], int str_len)
 {
 	int i;
 	//if no null parameter, assign arguments in argv array to char variable ch
 	//check if letter or space tab-- print if so
-	for(i= 0; arg[i] != '\0'; i++){
+	//spend time and look up why 
+	for(i= 0; i < str_len; i++){
 		char ch = arg[i];
 		if(isalpha(ch) || isblank(ch)){
 			printf("'%c' == %d", ch, ch);
