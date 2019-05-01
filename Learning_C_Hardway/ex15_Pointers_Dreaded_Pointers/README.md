@@ -1,6 +1,8 @@
 # Exercise 15: Pointers, Dreaded Pointers
 
-### Original code
+<details>
+  <summary>Original code</summary>
+  
 ```c
 #include <stdio.h>
 
@@ -53,3 +55,6 @@ int main(int argc, char *argv[])
 
 }
 ```
+</details>
+
+
