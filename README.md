@@ -22,7 +22,7 @@ Study C, followed by Binary Exploitation and Reverse Engineering C
 
 ### **Week One (April 22nd - April 30th**
 Exercises 1-16 of Learning C the Hard Way
-* [Exercises 15 of Learning_C_Hardway](ex15_Pointers_Dreaded_Pointers/README.md)
+* [Exercises 15 of Learning_C_Hardway](Learning_C_Hardway/ex15_Pointers_Dreaded_Pointers/README.md)
 
 
 ### **Week Two (May 1st - May 7th**
