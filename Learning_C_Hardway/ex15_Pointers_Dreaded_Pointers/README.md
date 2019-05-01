@@ -61,51 +61,40 @@ int main(int argc, char *argv[])
 
 <details>
   <summary> Make cur_age point at names</summary>
-## Resources 
+
+Resources: 
 https://developerinsider.co/type-casting-c-programming/
 
-### Error before casting the int pointer as a char 
+
+Error Message from attempting to point cur_age to names without typecast
+```
 ex15_pointers.c:23:17: warning: initialization of ‘int *’ from incompatible pointer type ‘char **’ [-Wincompatible-pointer-types]
   int *cur_age = names;
                  ^~~~~
+```
+
 ```c
 #include <stdio.h>
-
 
 int main(int argc, char *argv[])
 {
         int ages[] = { 23, 43, 12, 89, 2 };
         char *names[] = {"Alan", "Frank", "Mary", "John", "Lisa"};
 
-
         int count = sizeof(ages) / sizeof(int);
         int i = 0;
 
-        for(i = 0; i < count; i++){
-                printf("%s has %d years alive\n", names[i], ages[i]);
-
-        }
-        printf("---\n");
-
         char **cur_name = names;
+	// int *cur_age = ages; (The original)
 
-
-	// The Original
-        int *cur_age = ages;
-
-        //explicit typecasting from char to int
+        //Modified: Explicit typecasting of names from char to int
         int *cur_age = (int*)names;
-
-
-
 
         for(i = 0; i < count; i++){
                 printf("%s is %d years old\n", *(cur_name + i), *(cur_age + i));
         }
         printf("---\n");
-
         return 0;
-
 }
 
 ```
