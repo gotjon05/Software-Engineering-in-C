@@ -1,6 +1,6 @@
-hello world
+# Exercise 15: Pointers, Dreaded Pointers
 
-Exercise 15
+### Original Program
 ```
 #include <stdio.h>
 
