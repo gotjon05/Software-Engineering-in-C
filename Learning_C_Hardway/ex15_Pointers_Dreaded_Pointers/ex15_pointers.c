@@ -18,10 +18,12 @@ int main(int argc, char *argv[])
 
 	}
 	printf("---\n");
-	
-	//pointing the name ages at the begining of memory block cur_age
-	int *cur_age = ages;
+
 	char **cur_name = names;
+        //explicit typecasting from char to int
+ 	int *cur_age = (int*)names;
+	//Original 
+	//int *cur_age = ages;
 
 
 	//second way of using pointers
