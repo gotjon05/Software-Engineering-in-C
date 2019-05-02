@@ -1,100 +1,120 @@
 # Exercise 15: Pointers, Dreaded Pointers
 
-<details>
-  <summary>Original code</summary>
-  
+
+
+## Original Code  
 ```c
 #include <stdio.h>
 
 
 int main(int argc, char *argv[])
 {
-	//create two arrays
-	int ages[] = { 23, 43, 12, 89, 2 };
-	char *names[] = {"Alan", "Frank", "Mary", "John", "Lisa"};
+
+        int ages[] = { 23, 43, 12, 89, 2 };
+        char *names[] = {"Alan", "Frank", "Mary", "John", "Lisa"};
 
 
-	int count = sizeof(ages) / sizeof(int);
-	int i = 0;
+        int count = sizeof(ages) / sizeof(int);
+        int i = 0;
 
-	//first way using indexing
-	//using i to index into the array
-	for(i = 0; i < count; i++){
-		printf("%s has %d years alive\n", names[i], ages[i]);
+        //FIRST WAY: using arrays
+        for(i = 0; i < count; i++){
+                printf("%s has %d years alive\n", names[i], ages[i]);
 
-	}
-	printf("---\n");
-	
-	//pointing the name ages at the begining of memory block cur_age
-	int *cur_age = ages;
-	char **cur_name = names;
+        }
+        printf("---\n");
 
 
-	//second way of using pointers
-	//indexing into block by taking the base address of ages and getting the element
-	for(i = 0; i < count; i++){
-		printf("%s is %d years old\n", *(cur_name + i), *(cur_age + i));
-	}
-	printf("---\n");
+        char **cur_name = names;
+        int *cur_age = ages;
+
+
+        //SECOND WAY:using pointers
+        for(i = 0; i < count; i++){
+                printf("%s is %d years old\n", *(cur_name + i), *(cur_age + i));
+        }
+        printf("---\n");
 
 
 
-	//third way, pointers are just arrays
-	for(i = 0; i < count; i++){
-		printf("%s is %d years old again \n", cur_name[i], cur_age[i]);
-	}			
+        //THIRD WAY: using arrays
+        for(i = 0; i < count; i++){
+                printf("%s is %d years old again \n", cur_name[i], cur_age[i]);
+        }
 
-	
-	printf("---\n");                
 
-	for(cur_name = names, cur_age = ages; (cur_age - ages) < count; cur_name++, cur_age++){
-		printf("%s lived %d years so far \n", *cur_name, *cur_age);
-	}	
+        printf("---\n");
 
-	return 0;
+	//FOURTH WAY: using pointers
+        for(cur_name = names, cur_age = ages; (cur_age - ages) < count; cur_name++, cur_age++){
+                printf("%s lived %d years so far \n", *cur_name, *cur_age);
+        }
+
+        return 0;
 
 }
+
 ```
-</details>
 
-### How To Break it 
+## How To Break it
 
-<details>
-  <summary> Make cur_age point at names</summary>
 
-Resources: 
+## Make cur_age point at names
+Resources 
 https://developerinsider.co/type-casting-c-programming/
 
-
-Error Message from attempting to point cur_age to names without typecast
+### The compiler error from pointing int pointer cur_age to char array names
 ```
+int *cur_age = (int*)names;
+
 ex15_pointers.c:23:17: warning: initialization of ‘int *’ from incompatible pointer type ‘char **’ [-Wincompatible-pointer-types]
   int *cur_age = names;
                  ^~~~~
 ```
 
+
+##Modifying original program 
+
+
+
 ```c
 #include <stdio.h>
+
 
 int main(int argc, char *argv[])
 {
         int ages[] = { 23, 43, 12, 89, 2 };
         char *names[] = {"Alan", "Frank", "Mary", "John", "Lisa"};
 
+
         int count = sizeof(ages) / sizeof(int);
         int i = 0;
 
-        char **cur_name = names;
-	// int *cur_age = ages; (The original)
+        for(i = 0; i < count; i++){
+                printf("%s has %d years alive\n", names[i], ages[i]);
 
-        //Modified: Explicit typecasting of names from char to int
-        int *cur_age = (int*)names;
+        }
+        printf("---\n");
+
+        char **cur_name = names;
+
+
+	## // The Original
+        ## int *cur_age = ages;
+
+        ## //explicit typecasting from char to int
+        ## int *cur_age = (int*)names;
+
+
+
 
         for(i = 0; i < count; i++){
                 printf("%s is %d years old\n", *(cur_name + i), *(cur_age + i));
         }
         printf("---\n");
+
         return 0;
+
 }
 
 ```

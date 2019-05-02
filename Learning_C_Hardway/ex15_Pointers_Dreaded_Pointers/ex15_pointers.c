@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 
@@ -11,23 +12,19 @@ int main(int argc, char *argv[])
 	int count = sizeof(ages) / sizeof(int);
 	int i = 0;
 
-	//first way using indexing
-	//using i to index into the array
+	//FIRST WAY: using arrays
 	for(i = 0; i < count; i++){
 		printf("%s has %d years alive\n", names[i], ages[i]);
 
 	}
 	printf("---\n");
 
+
 	char **cur_name = names;
-        //explicit typecasting from char to int
- 	int *cur_age = (int*)names;
-	//Original 
-	//int *cur_age = ages;
+ 	int *cur_age = ages;
 
 
-	//second way of using pointers
-	//indexing into block by taking the base address of ages and getting the element
+	//SECOND WAY:using pointers
 	for(i = 0; i < count; i++){
 		printf("%s is %d years old\n", *(cur_name + i), *(cur_age + i));
 	}
@@ -35,7 +32,7 @@ int main(int argc, char *argv[])
 
 
 
-	//third way, pointers are just arrays
+	//THIRD WAY: using arrays
 	for(i = 0; i < count; i++){
 		printf("%s is %d years old again \n", cur_name[i], cur_age[i]);
 	}			
