@@ -1,0 +1,64 @@
+How to Break it:
+
+Try and make cur_age point at names. You will need to use a C cast to force it
+
+	Resources
+		https://developerinsider.co/type-casting-c-programming/
+
+	Questions
+		Should i explicit type cast the pointer, or the variable the pointer is pointing to? 
+		Why does (int*)names  work while int)names does not?
+
+	I tried pointing the int pointer *cur_age to names with an array of chars
+		int *cur_age = names;
+
+		I received an error because pointer and pointee are not compatible with each other. 
+		ex15_pointers.c:23:17: warning: initialization of ‘int *’ from incompatible pointer type ‘char **’ [-Wincompatible-pointer-types]
+  		int *cur_age = names;
+                 ^~~~~
+
+	The basic syntax for creating an explicit type cast is ((type)expression). I tried this and got a compiler error
+		type_casting.c: In function ‘main’:
+		type_casting.c:19:24: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+        	int *cur_age = (int)names;
+                        ^
+		type_casting.c:19:24: warning: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+
+
+	Succesfully using an explicit type cast of names from char to int pointer
+
+        	char *names[] = {"Alan", "Frank", "Mary", "John", "Lisa"};
+        	int *cur_age = (int*)names;
+
+		Output:
+			Alan is 4202512 years old
+			Frank is 0 years old
+			Mary is 4202517 years old
+			John is 0 years old
+			Lisa is 4202523 years old
+
+Change the For Loops to While Loops
+
+	While Loops print the null terminator when using the same end condition as a for loop
+	Re-writing the First Way:
+		 while(i < count){
+        		i++;
+        		printf("%s has %d years alive\n", names[i], ages[i]);
+        	}		
+
+		Frank has 43 years alive
+		Mary has 12 years alive
+		John has 89 years alive
+		Lisa has 2 years alive
+		(null) has 32767 years alive
+                            
+	I corrected this mistake by doing:
+		while(i < count-1){
+	                printf("%s has %d years alive\n", names[i], ages[i]);
+		}
+	
+
+
+	
+        printf("---\n");
+

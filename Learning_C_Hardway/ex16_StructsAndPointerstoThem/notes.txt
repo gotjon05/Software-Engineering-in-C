@@ -1,0 +1,46 @@
+
+Try passing NULL to Person_destroy see what it does
+	The assert check in the function Person_destroy caused the program to exit when it receiveda NUll argument while expecting 
+
+	Person_destroy(NULL)
+
+        //assert to make sure not getting bad input
+        assert(who != NULL);
+
+	ex16: ex16.c:48: Person_destroy: Assertion `who != NULL' failed.
+	[1]    19134 abort (core dumped)  ./ex16
+
+Forget to call Person_Destroy at the end, and get debugger print how much memory leaked
+	https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/detect_memory_leaks_with_memcheck_tool_provided_by_valgrind_part_i8?lang=en
+	valgrind --leak-check=yes ./ex16
+   	at 0x483880B: malloc (vg_replace_malloc.c:309)
+   	by 0x401184: Person_create (ex16.c:29)	-- where i allocated memory for the structure
+   	by 0x4012C4: main (ex16.c:69) -- where i created Joe
+
+Forget to free who->name in Person_destroy and compare output
+	at 0x483880B: malloc (vg_replace_malloc.c:309)
+	by 0x48EA63D: strdup (in /usr/lib64/libc-2.28.so)
+	by 0x4011B4: Person_create (ex16.c:36)	//         who->name = strdup(name);
+	by 0x4012B5: main (ex16.c:69)
+        
+
+
+Pass NULL to person_print
+	segfaults 
+
+Convert program to not use pointers and malloc 
+	create struct on the stack --- through variables
+		https://stackoverflow.com/questions/10916799/how-to-create-a-struct-on-the-stack-in-c
+	inititialize using x.y instead of x->y syntax
+
+
+
+
+
+
+
+
+	
+
+                                 
+	

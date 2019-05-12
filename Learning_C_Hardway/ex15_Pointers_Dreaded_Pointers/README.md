@@ -65,16 +65,24 @@ https://developerinsider.co/type-casting-c-programming/
 
 ### The compiler error from pointing int pointer cur_age to char array names
 ```
-int *cur_age = (int*)names;
+int *cur_age = names;
 
 ex15_pointers.c:23:17: warning: initialization of ‘int *’ from incompatible pointer type ‘char **’ [-Wincompatible-pointer-types]
   int *cur_age = names;
                  ^~~~~
 ```
+### The basic syntax for creating an explicit type cast is (type) expression. I tried this and got a compiler error
+```
+type_casting.c: In function ‘main’:
+type_casting.c:19:24: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+         int *cur_age = (int)names;
+                        ^
+type_casting.c:19:24: warning: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+```
 
 
-##Modifying original program 
 
+##Modified program: 
 
 
 ```c
@@ -99,11 +107,11 @@ int main(int argc, char *argv[])
         char **cur_name = names;
 
 
-	## // The Original
-        ## int *cur_age = ages;
+	// The Original
+        int *cur_age = ages;
 
-        ## //explicit typecasting from char to int
-        ## int *cur_age = (int*)names;
+        //explicit typecasting from char to int
+        int *cur_age = (int*)names;
 
 
 
