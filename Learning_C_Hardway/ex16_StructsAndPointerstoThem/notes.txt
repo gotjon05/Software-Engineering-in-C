@@ -1,6 +1,8 @@
+Questions:
+	Why do i need a pointer for a fields with type char vs. int?
 
-Try passing NULL to Person_destroy see what it does
-	The assert check in the function Person_destroy caused the program to exit when it receiveda NUll argument while expecting 
+Try passing NULL to Person_destroy see what it does (Provides a deeper understanding of assert function)
+	The assert check in the function Person_destroy causes the program to exit when it receives a NUll argument while expecting 
 
 	Person_destroy(NULL)
 
@@ -10,6 +12,7 @@ Try passing NULL to Person_destroy see what it does
 	ex16: ex16.c:48: Person_destroy: Assertion `who != NULL' failed.
 	[1]    19134 abort (core dumped)  ./ex16
 
+
 Forget to call Person_Destroy at the end, and get debugger print how much memory leaked
 	https://www.ibm.com/developerworks/community/blogs/6e6f6d1b-95c3-46df-8a26-b7efd8ee4b57/entry/detect_memory_leaks_with_memcheck_tool_provided_by_valgrind_part_i8?lang=en
 	valgrind --leak-check=yes ./ex16
@@ -18,6 +21,7 @@ Forget to call Person_Destroy at the end, and get debugger print how much memory
    	by 0x4012C4: main (ex16.c:69) -- where i created Joe
 
 Forget to free who->name in Person_destroy and compare output
+        valgrind --leak-check=yes ./ex16
 	at 0x483880B: malloc (vg_replace_malloc.c:309)
 	by 0x48EA63D: strdup (in /usr/lib64/libc-2.28.so)
 	by 0x4011B4: Person_create (ex16.c:36)	//         who->name = strdup(name);
@@ -25,8 +29,10 @@ Forget to free who->name in Person_destroy and compare output
         
 
 
-Pass NULL to person_print
-	segfaults 
+Pass NULL to Person_print(NULL Is quick way to crash program)
+	segfaults
+        valgrind --leak-check=yes ./ex16
+ 
 
 Convert program to not use pointers and malloc 
 	create struct on the stack --- through variables

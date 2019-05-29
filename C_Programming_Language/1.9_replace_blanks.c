@@ -18,9 +18,9 @@ int main()
         int c, nspaces;
 
         nspaces = 0;
-        c = getchar();
 
-        while(c != EOF) {
+
+        while((getchar(c) != EOF)) {
                 if (c == ' '){                     
 			//nspaces increments first?
 			if (nspaces > 0) {
