@@ -1,13 +1,18 @@
 Big Idea of Exercise:
 	Using malloc to ask OS for a large amount of memory when creating Database
 
+Questions:
+	RAM is the stack?
+	
+	:e
+
 Test for memory leaks with heap 
 	valgrind --leak-check=yes ./ex17_heap_stack_memory
-
 
 Definitions
 	ATOI = Function that removes whitespace and interprets string as int
 	
 	expressions like (!ptr)  = testing that a pointer is NULL
+
 
 
