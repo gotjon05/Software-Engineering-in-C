@@ -25,7 +25,7 @@ int main()
 	//passing empty char array line and int 1000 to getlines
 	//null character is the end condition of the while loop
         while ((len = getlines(line, MAXLINE)) > 0){
-		printf("%d, %s", len, line);
+//		printf("%d, %s", len, line);
                 if (len > max) {
                         max = len;
                         copy(longest, line);
@@ -49,6 +49,7 @@ int getlines(char line[], int maxline)
 {
         int c, i;
 	//end condition is line break--loop keeps counting until line break 
+	//stops collecting when the array is full
 	for (i=0; i<maxline-1 && (c=getchar())!=EOF && c!='\n'; ++i){
 		//save input into char array
   		line[i] = c;
