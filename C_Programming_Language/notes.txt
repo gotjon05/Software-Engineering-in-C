@@ -1,0 +1,92 @@
+2.3
+	String constant/string literal ("i am string") vs. character constant ('x')
+		string constant
+			-sequence of zero or more characters surrounded by double quotes, quotes serve to delimit it. 
+			-technically an array of characters with null character '/0' at the end 
+		
+
+		Character Constant 
+			-integer used to produce the numeric values of the letter x in the machines character set
+			-written as one character within single quotes. the value of the character constant is the 
+			numeric values of the character in the machines character set
+			-often used in comparisons with other characters 
+
+
+2.4 Declarations
+	Declarations
+		What it is
+			specifies a type and contains a list of one or more variables of that type
+	
+		Purpose
+			-to declare variables before use
+	Initialization 
+		What is it
+			Replacing a variables initial garbage value with a non-garbage value 
+		How it works
+			if the name is followed by an equal sign and an expression, the expression serves as an 
+			initializer
+
+		explicit initialization of automatic variable	
+
+		initialization of external and static variables
+
+
+2.6 Relational and Logical Operators
+
+	relational operators have lower precedence that arithmetic operators
+		example
+			i < lim-1  == i < (lim-1)	
+
+	logical operators
+		How are they evaluated
+			evaluated left to right and evaluation stops as soon as the truth or falsehood of result
+
+
+	Example
+
+		Original.		for(i=0; i <lim-1 && (c =getchar()) != '\n' && c != EOF; ++i)
+						s[i] = c;
+
+		1.			(i < lim-1) 
+				why is it evaluated first?
+					evaluated left to right and relational operator has lower precedence than 
+					arithmatic operation
+
+				Purpose of evaluating it first within program
+					Because its neccisary to check that there is room to store in array s 
+					before reading a new character
+
+		2. 			(c =getchar())
+				why is it evaluated first within program
+					parenthesis has highest 
+				Purpose of evaluating it first within program
+					we need to call getchar before c is tested. To avoid testing c with equality operators which have 
+					higher priority than assignments, we use parenthesis to elevate priority
+
+
+2.7 Type Conversion
+	What is type conversion
+		character transformations, where operands of different types are changed to a common type 
+	How does it happen
+		through the interaction with an operator 
+	
+	Examples of Char to int
+		Chars
+			its a small integer so able to be used in arithmetic expressions 
+			s[i] - 0 gives the numeric value of character stored in s[i]
+
+2.8 Increment and Decrement Operators
+	increment via postfix vs prefix
+		pre-fix (++n)
+			increments n before value is used
+			x = ++n  --> sets x to 6
+
+		postfix (n++) 
+			increments n after value is used	
+			x = n++ --> sets x to 5
+
+
+
+
+
+
