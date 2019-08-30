@@ -86,6 +86,10 @@
 			x = n++ --> sets x to 5
 
 
+		Considerations for either dont matter if increment effect is only desired
+
+
+
 
 
 

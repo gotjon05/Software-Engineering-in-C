@@ -6,9 +6,9 @@ int htoi(char s[]);
 int main(){
 
 
-	char s[] = {'3', '0xA', 'a'};
+	char s[] = {'0xA'};
 	htoi(s);
-	printf("%x", s);
+	printf("%d", s);
 }
 
 
