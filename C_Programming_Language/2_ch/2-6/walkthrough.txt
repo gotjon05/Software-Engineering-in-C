@@ -1,0 +1,8 @@
+Resources 
+	
+
+	https://codereview.stackexchange.com/questions/196242/kr-exercise-2-6-inserting-part-of-a-bitset-into-another
+
+
+Walkthrough 
+	Understanding the role of 
