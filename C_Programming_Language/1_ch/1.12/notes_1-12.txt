@@ -1,0 +1,10 @@
+
+
+
+I forgot to consider the order of operations when using getchar()
+	I inititially used: while(c = getchar() != EOF){
+		This does not print anything because it reads right to left and EOF is read before getchar. 
+
+	Solution: while((c = getchar()) != EOF){
+		I needed to give getchar a parenthesis, the highest order of operations to insure that its called first
+

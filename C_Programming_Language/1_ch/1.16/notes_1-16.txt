@@ -1,0 +1,11 @@
+
+
+Problem: 
+	Revise the main routine of the longest-line program so it will correctly print the lenght of arbitrary long input lines and as much as possible of text
+
+Understanding what the problem is asking me 
+	store as much as you can up to MAXLINE characters, but you keep reading after that limit just for the purpose of counting.
+
+
+
+  

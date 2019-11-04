@@ -1,0 +1,14 @@
+
+confused by the placement of state = IN; and nchar = 0; in the if loop.
+
+
+++wordlen[nchar]; vs. ++nchar;
+
+Difference bettwen incrementing the index and incrementing variable of array(confused by incrementing array variable ex: ++wordlen[nchar];)
+	https://stackoverflow.com/questions/7595247/array-increment-types-in-c-arrayi-vs-arrayi
+
+	++wordlen[nchar]	 
+		increments the value at nchar index 
+
+	wordlen[++nchar] or in this program, nchar++
+		increments the index 	

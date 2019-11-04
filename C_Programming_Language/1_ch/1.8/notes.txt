@@ -1,0 +1,6 @@
+
+
+Why its necissary to use single quotes instead of double quotes for print format for blanks, tabs and newlines?
+
+Why an int is also a char?
+
