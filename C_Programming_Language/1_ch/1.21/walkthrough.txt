@@ -1,0 +1,10 @@
+How do you determine your current fonts tab width (varies based on if monospaced)?
+	
+
+Understanding tabstops in relation to the number of previous spaces and using tab:
+	 -if you place a tab in a line somewhere, the tab will fill out the space till the next tab stop.
+
+
+
+
+

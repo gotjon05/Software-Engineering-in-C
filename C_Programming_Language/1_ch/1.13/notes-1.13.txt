@@ -1,5 +1,5 @@
 
-confused by the placement of state = IN; and nchar = 0; in the if loop.
+Important concepts
 
 
 ++wordlen[nchar]; vs. ++nchar;
@@ -12,3 +12,8 @@ Difference bettwen incrementing the index and incrementing variable of array(con
 
 	wordlen[++nchar] or in this program, nchar++
 		increments the index 	
+
+
+
+
+

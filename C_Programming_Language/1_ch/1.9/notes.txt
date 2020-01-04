@@ -1,0 +1,3 @@
+How to break program 
+	removing else that sets count to 0 if its not a ascii space
+		this does not output the characters after the ascii space 

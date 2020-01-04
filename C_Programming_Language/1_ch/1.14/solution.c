@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-//not clear to me how the index is increasing
 int main(void) 
 {
 	int FREQUENCY_LENGTH = 256; // We'll just count all ASCII values. Why not?
@@ -14,7 +13,7 @@ int main(void)
 	// increases value of frequencies in index c
   	while ((c = getchar()) != EOF) {
     		++frequencies[c];
-		printf("%d %d\n", c, frequencies[c]);
+//		printf("%d %d\n", c, frequencies[c]);
 	}
 
   	printf("\n");

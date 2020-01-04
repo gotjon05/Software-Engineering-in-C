@@ -1,0 +1,8 @@
+
+
+first attempt:
+	I did not consider how tabs equivlence to spaces changes from 8 if there are spaces before the tab
+
+	I did not consider using a while loop to print spaces equivelent to a tab rather than creating a string of 8 spaces to represent a normal tab
+
+

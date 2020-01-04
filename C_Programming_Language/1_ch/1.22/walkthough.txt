@@ -1,0 +1,13 @@
+Write a program to ``fold'' long input lines into two or more shorter lines after
+the last non-blank character that occurs before the n-th column of input
+
+
+column is going to be every 7 columns 
+
+------------------------------------------------------------
+first sample case:  
+
+
+
+How to pipe the file with input into your program and use stdin to read it in C program
+	cat input.txt| ./v2          

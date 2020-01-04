@@ -1,0 +1,10 @@
+
+
+Attempts to identify last character of array in an attempt to compare it to spaces and tabs
+
+	first attempt: considered using maxline-1 property 
+	second attempt: putchar(line[maxline]);
+
+
+
+     

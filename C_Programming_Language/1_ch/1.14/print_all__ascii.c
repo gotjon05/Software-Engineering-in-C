@@ -12,7 +12,8 @@ https://stackoverflow.com/questions/1472581/printing-chars-and-their-ascii-code-
 int main()
 {
 	int i;
-	for (i = 33; i <= 126; ++i) {
-                printf("%c | ", i);
+	for (i = 32; i <= 126; ++i)
+       	{
+                printf("%c %d | ", i, i);
 	}
 }

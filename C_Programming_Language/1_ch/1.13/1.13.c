@@ -1,58 +1,37 @@
-//print histogram of length of words in input 
-
-
 #include <stdio.h>
-#define MAXLEN 15
-#define IN 1
-#define OUT 0
+#define LENGTH 20
+
+//write a program to print a histogram of the length of words in its input.
+//identify a word and count input
+
+
 int main()
 {
-	int c = 0;
-	int i, j;
-	//number of char in word
-	int nchar = 0;
-	//flag to know if inside word
-	int state = IN;
-	//count how many words in particular length
-	int wordlen[MAXLEN];
-
-
-	for(i = 0; i < MAXLEN; ++i){
-		wordlen[i] = 0;
+	int words[LENGTH];
+	int i;
+	for(i = 0; i < LENGTH; i++){
+		words[i] = 0;
 	}
 
+	int c;
 	while((c = getchar()) != EOF){
-		
-		
-
-		if(c == '\t' || c == ' ' || c == '\n'){	
-			if(state == OUT){
-				//state = IN; 
-				//nchar = 0;
-
-				if(nchar < MAXLEN){
-					//increments value at index nchar and evaluates wordlen[nchar] before it was been incremented
-					++wordlen[nchar];
-					
-				}
-				state = IN;
-				nchar = 0;
-		
-			}
-		}else{
-			++nchar;
-			state = OUT;			
-		}
-
+		//new word, increment index
+		if(c == '\n' || c == '\t' || c == ' ')		
+			words[i++];	
+		//increment size of word in particular index
+		else{
+			++words[i];	
+		}	
 	}
-	for(i = 1; i < MAXLEN; ++i){
-		printf("%2d | ", i);
-		for(j = 0; j < wordlen[i]; ++j){
-			putchar('*');
+
+
+	int j;
+	for(j= 0; j < LENGTH; j++){
+		printf("%d", words[j]);
 	
-		}
-		putchar('\n');
-	}	
+	}
+
+}
+
 	
-}	
 

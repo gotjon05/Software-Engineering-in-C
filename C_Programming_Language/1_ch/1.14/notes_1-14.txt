@@ -1,5 +1,8 @@
 
 
 
-I did not realize you can pull ascii characters from thin air in C 
-	appears that if you print a specific range of characters, it outputs ascii 
+Tried to break the program by using the input 1/2, however it counts each character individually so it counted 1,/,2 seprately 
+
+
+
+
