@@ -1,0 +1,3 @@
+
+
+to store strings in an array, you need an array of arrays. Because each string is itself an array

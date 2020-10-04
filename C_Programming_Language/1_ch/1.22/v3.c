@@ -20,7 +20,6 @@ int main()
 	int c, j;
 	j = 0;
 
-	//put input into array
 	while((c = getchar()) != EOF){
 		lines[j] = c;
 		++j;
@@ -28,24 +27,25 @@ int main()
 	lines[j] = '\0';
 
 
-	int z;
+	int z, counter;
 	z = 0;
 	//walk through the entire array
+	//call column_split for each 14 characters?
 	while(z < BUFFER){
-		//call find_space when z reaches column split 
-		if(z <= COLUMN){
-			columnsplit(lines, find_space(lines));
+		++counter;
+		if(counter <= COLUMN){
+			column_split(lines, find_space(lines));
 		}
+		counter = 0;
 	}
-/*	
-	//number of spaces returned from find_space gets saves in spaces
-	spaces = find_space(lines);
-	column_split(lines, spaces);
-*/
+
+	
+	//spaces = find_space(lines);
+	//column_split(lines, spaces);
+
 }
 
 //tells me where the first space is in input before column 15
-
 int find_space(char lines[])
 {
 	int counter, space;
@@ -63,6 +63,7 @@ int find_space(char lines[])
 	}  
 }
 
+//prints characters until the space before column 15
 void column_split(char lines[], int spaces)
 {
 	int c;

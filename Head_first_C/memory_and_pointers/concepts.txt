@@ -1,0 +1,11 @@
+call by value 
+https://www.tutorialspoint.com/cprogramming/c_function_call_by_value.htm
+
+
+
+
+
+copying the value of a variable vs. passing the address
+	passing the address allows the function that receives the address as an argument to change the contents of the original variable. This allows for functions to share memory  
+
+

@@ -2,12 +2,46 @@ Write a program to ``fold'' long input lines into two or more shorter lines afte
 the last non-blank character that occurs before the n-th column of input
 
 
-column is going to be every 7 columns 
+column is going to be every 14 columns 
 
 ------------------------------------------------------------
 first sample case:  
+	
+	hello my name is jonathan gottlieb
 
 
+Output:
+	(characters + space)
+	hello my name 14 
+	is jonathan 12
+	gottlieb 8 (does not +1 here)
+
+
+
+------------------------------------------------------------
+cat 2input.txt|./book_solution
+
+
+>>> len("hello my name")
+13
+>>> len("is jonathan ")
+12
+>>> len("gottlieb")
+8
+>>> 
+
+
+
+------------------------------------------------------------
+
+
+Concepts:
 
 How to pipe the file with input into your program and use stdin to read it in C program
 	cat input.txt| ./v2          
+
+
+I want to increment my position inside of array storing input by 14 each function call by using index of array. 
+
+
+
